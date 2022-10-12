@@ -1,0 +1,45 @@
+{
+  "name": "yep",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "@amap/amap-jsapi-loader": "^1.0.1",
+    "@element-plus/icons-vue": "^1.1.4",
+    "@kangc/v-md-editor": "^2.3.15",
+    "aplayer": "^1.10.1",
+    "axios": "^0.26.1",
+    "core-js": "^3.8.3",
+    "echarts": "^4.9.0",
+    "element-plus": "^2.1.4",
+    "element-ui": "^2.15.9",
+    "hls.js": "^1.1.5",
+    "jsencrypt": "^3.2.1",
+    "mavon-editor": "^2.10.4",
+    "md-editor-v3": "^1.11.6",
+    "qrcode": "^1.5.0",
+    "qrcodejs2": "0.0.2",
+    "vue": "^3.2.13",
+    "vue-qr": "^4.0.9",
+    "vue-router": "^4.0.3",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "ts-loader": "^9.3.0",
+    "typescript": "^4.7.3",
+    "vue-loader": "^17.0.0",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}
