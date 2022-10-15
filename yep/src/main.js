@@ -8,8 +8,12 @@ import axios from "axios";
 import MdEditor from 'md-editor-v3'
 import 'md-editor-v3/lib/style.css'
 import {Star} from '@element-plus/icons-vue'
+// main.js
+
+
 
 import Vue from "vue";
+import * as echarts from 'echarts'
 
 const app = createApp(App)
 
@@ -19,7 +23,9 @@ app.use(MdEditor)
 app.use(Star)
 VueElement.prototype.axios=axios;
 
+app.config.globalProperties.$echarts = echarts
 app.mount('#app')
+
 
 
 

@@ -4,7 +4,7 @@ proxyObj['/']={
   //websocket
   ws:false,
   //目标地址
-  target:'http://localhost:8081',
+  target:'http://43.143.213.47:8081',
 //发送请求头host会被设置为target
   changeOrigin:true,
 //不重写请求地址
@@ -21,7 +21,7 @@ module.exports = defineConfig({
 module.exports={
   devServer:{
     host:'localhost',
-    port:8080,
+    port:8081,
     proxy:proxyObj
   }
 }
