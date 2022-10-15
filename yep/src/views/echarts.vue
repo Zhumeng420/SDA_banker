@@ -14,27 +14,33 @@
      </div>
      <div>
        <label><H4>折线走势展示图</H4></label>
-
        <el-button @click="beforePriceShow" >前收盘价走势图</el-button>
        <el-button @click="openPriceShow" style="margin-left: 30px">开盘价走势图</el-button>
        <el-button @click="topPriceShow" style="margin-left: 30px">最高价走势图</el-button>
        <el-button @click="closingPriceShow" style="margin-left: 30px">收盘价走势图</el-button>
        <el-button @click="bottomPriceShow" style="margin-left: 30px">最低价走势图</el-button>
        <el-button @click="drawLine" style="margin-left: 30px">折线走势图</el-button>
+       <el-button type="primary" @click="calucator">上证指数</el-button>
        <div
            ref="myChart"
            id="myChart"
            :style="{ width: '1200px', height: '400px'}"
        ></div>
-     </div>
-     <div>
-       <label><H4>上证指数展示图</H4></label>
-       <el-button type="primary" @click="calucator">上证指数</el-button>
+       <div
+           ref="myChart2"
+           id="myChart2"
+           :style="{ width: '1200px', height: '400px'}"
+       ></div>
+
        <div
            ref="myChart1"
            id="myChart1"
            :style="{ width: '1200px', height: '400px'}"
        ></div>
+     </div>
+     <div>
+       <label><H4>上证指数展示图</H4></label>
+
      </div>
    </el-card>
  </div>
@@ -55,6 +61,8 @@ export default {
   mounted() {
     this.getInfo()
     this.calucator()
+    this.drawLine()
+    this.beforePriceShow()
   },
   data() {
     return {
@@ -139,9 +147,24 @@ export default {
     },
     drawLine() {
       // this.getInfo()
-      const dom = this.$refs['myChart'];
+      const dom = this.$refs['myChart2'];
       const myChart = this.$echarts.init(dom); // 初始化echarts实例
       const option = {
+        title: {
+          text: '走势总图',
+          left: 0
+        },
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'cross'
+          }
+        },
+        grid: {
+          left: '10%',
+          right: '10%',
+          bottom: '15%'
+        },
         xAxis: {
           name: "日期",
           type: 'category',
@@ -150,6 +173,20 @@ export default {
         yAxis: {
           type: 'value'
         },
+        dataZoom: [
+          {
+            type: 'inside',
+            start: 50,
+            end: 100
+          },
+          {
+            show: true,
+            type: 'slider',
+            top: '90%',
+            start: 50,
+            end: 100
+          }
+        ],
         series: [
           {
             name: "前收盘价",
